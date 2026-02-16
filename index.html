@@ -34,8 +34,27 @@ h1 {
     color: black;
 }
 </style>
-</head>
 
+<script>
+function checkAge() {
+    var age = prompt("Please enter your age:");
+    if(age === null) {
+        document.body.innerHTML = "<h2>Access denied.</h2>";
+        return false;
+    }
+    age = parseInt(age);
+    if(isNaN(age) || age < 18) {
+        document.body.innerHTML = "<h2>Sorry, you must be 18+ to view this site.</h2>";
+    } else {
+        document.body.style.display = "block";
+    }
+}
+
+document.body.style.display = "none";
+window.onload = checkAge;
+</script>
+
+</head>
 <body>
 
 <h1>UNITED STATES ARCHIVE<br>ETHAN FILES</h1>
